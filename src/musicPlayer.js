@@ -17,7 +17,6 @@ import { useEffect, useState } from "react";
 
 const MiddleButton = () => {
     const [{is_playing}] = useDataLayerValue();
-    console.log(is_playing);
     return(
         <>
             {is_playing?<PauseCircleFilledIcon fontSize="large"/>:<PlayCircleFilledIcon fontSize="large" className="musicplayer_icon"/>}
@@ -34,33 +33,6 @@ const ResponsiveplayButton = () => {
 }
 export const CenterMusicPlayer = () => {
     const [{playback,sound,is_playing},dispatch] = useDataLayerValue();
-    console.log(`playback ${playback}`);
-    const snd = new Howl({
-        src: [`${playback}`],
-        format: ['mp3'],
-        autoplay: false,
-        loop: false,
-        volume: 0.5,
-        onend: () => {
-            dispatch({
-                type : 'PLAY',
-                is_playing: false
-            })
-        }
-      });
-    useEffect(() => {
-        dispatch({
-            type: 'SET_SOUND',
-            sound:snd
-        })
-    },[playback])
-    // sound.on('end',() => {
-    //     console.log("song ended");
-        // dispatch({
-        //     type : 'PLAY',
-        //     is_playing: false
-        // })
-    // })    
     return(
         <>
             <div className="music_Player__center">
@@ -89,7 +61,6 @@ export const CenterMusicPlayer = () => {
 }
 const LeftMusicPlayer = () => {
     const [{curr_playing},dispatch] = useDataLayerValue();
-    console.log(curr_playing);
     let img_url= "";
     let name = null;
     let artist= null;
@@ -107,7 +78,6 @@ const LeftMusicPlayer = () => {
             })
         }
     },[url])
-    console.log(url);
     return(
         <div className="music_Player__left">
             <img src={img_url} />
@@ -119,25 +89,33 @@ const LeftMusicPlayer = () => {
     );
 }
 export const Musicplayer = (props) => {
-    const [{playback,sound,is_playing},dispatch] = useDataLayerValue();
-    let play=false;
-    const snd = new Howl({
-        src: [`${playback}`],
-        format: ['mp3'],
-        autoplay: false,
-        loop: false,
-        volume: 0.5,
-        onend: () => dispatch({
-            type : 'PLAY',
-            is_playing: false
-        })
-      });
+    const [{playback,sound,is_playing,volume},dispatch] = useDataLayerValue();
     useEffect(() => {
+        const snd = new Howl({
+            src: [`${playback}`],
+            format: ['mp3'],
+            autoplay: false,
+            loop: false,
+            volume: 0.5,
+            onend: () => {
+                dispatch({
+                    type : 'PLAY',
+                    is_playing: false
+                })
+            }
+          });
         dispatch({
             type: 'SET_SOUND',
             sound:snd
         })
-    },[playback])
+    },[playback]) 
+    const changeVolume = (event, newValue) => {
+        dispatch({
+            type: 'SET_VOLUME',
+            volume : newValue
+        })
+    } 
+    Howler.volume(volume/100);
     return (
         <>
             <div className="music_Player hide">
@@ -152,7 +130,7 @@ export const Musicplayer = (props) => {
                             <VolumeUpIcon />
                         </Grid>
                         <Grid item xs>
-                            <Slider />
+                            <Slider value={volume} onChange={changeVolume}/>
                         </Grid>
                     </Grid>
                 </div>
@@ -160,7 +138,6 @@ export const Musicplayer = (props) => {
             <div className="music_Player disp">
                 <LeftMusicPlayer />
                 <div className="musicplayer_responsive_right" onClick={() => {
-                    console.log("playback",playback);
                     if(sound){
                         if(is_playing)
                             sound.pause();

@@ -2,7 +2,7 @@ import React from 'react'
 import "./cssPlayer/dataslider.css";
 import { useDataLayerValue } from './DataLayer';
 export const DataSlider = ({title, list})  => {
-    const [{sound,curr_playing,is_playing},dispatch] = useDataLayerValue();
+    const [{sound,curr_playing},dispatch] = useDataLayerValue();
     return (
         <>  
             <div className="dataslider">
@@ -16,6 +16,11 @@ export const DataSlider = ({title, list})  => {
                             <div className="dataslider_innerbox" onClick={() => {
                                 if(sound){
                                     sound.pause();
+                                    sound.seek([0]);
+                                    dispatch({
+                                        type : 'PLAY',
+                                        is_playing: false
+                                    }) 
                                 }
                                 if(curr_playing != item){
                                     dispatch({
@@ -26,10 +31,7 @@ export const DataSlider = ({title, list})  => {
                                         type:'PLAYBACK',
                                         playback: item?.track?.preview_url
                                     })
-                                    dispatch({
-                                        type : 'PLAY',
-                                        is_playing: false
-                                    }) 
+                                    console.log("A");
                                 }
                             }}>
                                 <img src={item?.album.images[1].url} className="head_img" alt={item?.album.name} />
