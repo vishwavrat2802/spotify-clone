@@ -1,0 +1,18 @@
+.menuBarOptions{
+    display: flex;
+    align-items: center;
+    color: gray;
+    height: 40px;
+    cursor: pointer;
+    transition: 200ms color ease-in;
+}
+.menuBarOptions:hover{
+    color: white;
+}
+.menuBarOption_Icon{
+    margin: 1px 20px 8px 10%;
+}
+
+.menuBarOptions > p{
+    margin-left: 10%;
+}

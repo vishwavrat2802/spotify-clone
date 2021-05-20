@@ -1,0 +1,61 @@
+::-webkit-scrollbar{
+    border-radius: 10px;
+    height: 8px;
+    background-color: black ;
+  }
+ ::-webkit-scrollbar:hover{
+    box-shadow: inset 0 0 5px #191414; 
+    background-color: #191414;
+}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #191818;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black; 
+    height: 10px;
+  }
+
+/* Main CSS */
+.dataslider{
+    margin-top: 50px;    
+}
+.dataslider_outerbox{
+    height: 260px;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.dataslider_innerbox{
+    width: auto;
+    height: auto;
+    padding: 15px;
+    margin-right: 20px;
+    background-color: #282828;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms background-color ease-in;
+}
+.dataslider_innerbox  h6{
+    margin-bottom: 0px;
+    color: white;
+}
+.head_img{
+    width: 150px;
+    margin-bottom: 10px;
+}
+.dataslider_innerbox p{
+    margin-bottom: 20px;
+    color: gray;
+}
+
+.dataslider_title{
+    color: white;
+}
+.dataslider_innerbox:hover{
+    background-color: #191414;
+}

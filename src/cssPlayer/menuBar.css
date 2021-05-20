@@ -1,0 +1,26 @@
+.menu_Bar{
+    height: 100vh;
+    background-color: #040404;
+}
+@media(max-width:600px){
+    .menu_Bar{
+        display: none;
+    }
+}
+.menuBar_logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+}
+.menu_Bar > strong {
+    margin-left: 10%;
+    color: whitesmoke;
+}
+hr{
+    border-top: 3px solid whitesmoke;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}

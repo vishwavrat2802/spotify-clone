@@ -1,0 +1,10 @@
+.menu_Bottom {
+    background-color: black;
+    height: 65px;
+    width: 100%;
+}
+@media(min-width:600px){
+    .menu_Bottom{
+        display: none;
+    }
+}

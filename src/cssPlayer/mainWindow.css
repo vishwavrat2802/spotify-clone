@@ -1,0 +1,5 @@
+.main_window{
+    height: 100vh;
+    background: linear-gradient(rgb(91, 87, 115),#191414,rgba(0,0,0,1));
+    padding: 4%;
+}
