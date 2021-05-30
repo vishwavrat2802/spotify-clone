@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/vishwavrat2802/spotify-clone/static/css/main.26b304f1.chunk.css",
+    "main.js": "/vishwavrat2802/spotify-clone/static/js/main.2b4ab785.chunk.js",
+    "main.js.map": "/vishwavrat2802/spotify-clone/static/js/main.2b4ab785.chunk.js.map",
+    "runtime-main.js": "/vishwavrat2802/spotify-clone/static/js/runtime-main.3141efbd.js",
+    "runtime-main.js.map": "/vishwavrat2802/spotify-clone/static/js/runtime-main.3141efbd.js.map",
+    "static/css/2.5c573378.chunk.css": "/vishwavrat2802/spotify-clone/static/css/2.5c573378.chunk.css",
+    "static/js/2.34c3e581.chunk.js": "/vishwavrat2802/spotify-clone/static/js/2.34c3e581.chunk.js",
+    "static/js/2.34c3e581.chunk.js.map": "/vishwavrat2802/spotify-clone/static/js/2.34c3e581.chunk.js.map",
+    "static/js/3.448aee24.chunk.js": "/vishwavrat2802/spotify-clone/static/js/3.448aee24.chunk.js",
+    "static/js/3.448aee24.chunk.js.map": "/vishwavrat2802/spotify-clone/static/js/3.448aee24.chunk.js.map",
+    "index.html": "/vishwavrat2802/spotify-clone/index.html",
+    "static/css/2.5c573378.chunk.css.map": "/vishwavrat2802/spotify-clone/static/css/2.5c573378.chunk.css.map",
+    "static/css/main.26b304f1.chunk.css.map": "/vishwavrat2802/spotify-clone/static/css/main.26b304f1.chunk.css.map",
+    "static/js/2.34c3e581.chunk.js.LICENSE.txt": "/vishwavrat2802/spotify-clone/static/js/2.34c3e581.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3141efbd.js",
+    "static/css/2.5c573378.chunk.css",
+    "static/js/2.34c3e581.chunk.js",
+    "static/css/main.26b304f1.chunk.css",
+    "static/js/main.2b4ab785.chunk.js"
+  ]
+}
