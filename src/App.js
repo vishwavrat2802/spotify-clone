@@ -10,16 +10,15 @@ function App() {
   const [{ user, token },dispatch] = useDataLayerValue();
   useEffect(() => {
     const hash = getTokenFromUrl();
-    window.location.hash = "";
     const _token = hash.access_token;
+    window.location.hash = "Home";
+
     if(_token){
       dispatch({
         type: 'SET_TOKEN',
         token:_token
       })
-
       spotify.setAccessToken(_token);
-
       spotify.getMe().then(user => {
         // console.log("Here is user", user);
         dispatch({
@@ -79,15 +78,26 @@ function App() {
         }, function(err) {
           console.log('Something went wrong!', err);
         });
-        spotify.getNewReleases({ limit : 10, offset: 0, country: 'IN' })
-        .then(function(data) {
-          console.log("New Release",data);
-          }, function(err) {
-            console.log("Something went wrong!", err);
-          });
+
         spotify.getMyTopArtists({limit:10})
         .then(function(data) {
           console.log("Top Artists",data);
+        }, function(err) {
+          console.log('Something went wrong!', err);
+        });
+
+        spotify.getMySavedTracks()
+        .then(function(data) {
+          console.log(data);
+        }, function(err) {
+          console.log('Something went wrong!', err);
+        });
+
+
+        spotify.getMySavedAlbums()
+        .then(function(data) {
+          // Output items
+          console.log(data);
         }, function(err) {
           console.log('Something went wrong!', err);
         });

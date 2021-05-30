@@ -2,6 +2,39 @@
     background-color: black;
     height: 65px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_Bottom div {
+    width: 100%;
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    color: grey;
+    height: 100%;
+}
+.menu_Bottom_name{
+    font-size: 10px;
+    margin-bottom: 0;
+}
+
+.navigation{
+    text-decoration: none;
+    display: block;
+    color: grey;
+    height: 100%;
+    padding-top: 9%;
+}
+.navigation:hover{
+    background-color: #191919;
+    text-decoration: none;
+    color: white;
+}
+.activeClass{
+    background-color: #191919;
+    text-decoration: none;
+    color: white;
 }
 @media(min-width:600px){
     .menu_Bottom{

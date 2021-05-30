@@ -18,6 +18,18 @@
     margin-left: 10%;
     color: whitesmoke;
 }
+.menu_navigation{
+    color: grey;
+}
+.menu_navigation:hover{
+    display: block;
+    text-decoration: none;
+    color: whitesmoke;
+}
+.navigation_active{
+    display: block;
+    color: whitesmoke;
+}
 hr{
     border-top: 3px solid whitesmoke;
     width: 80%;

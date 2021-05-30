@@ -12,7 +12,8 @@ export const initialState = {
     is_playing:false,
     sound:null,
     top_tracks: null,
-    volume:50
+    volume:50,
+    searchMusic: null
 };
 
 const reducer = (state,action) => {
@@ -28,6 +29,7 @@ const reducer = (state,action) => {
         case 'SET_SOUND': return{...state,sound:action.sound};
         case 'SET_TOPTRACKS' : return{...state,top_tracks:action.top_tracks}; 
         case 'SET_VOLUME' : return{...state,volume:action.volume};
+        case 'SEARCH_MUSIC' : return{...state,searchMusic:action.searchMusic};
         default: return state;
     }
     
