@@ -18,3 +18,4 @@ Tech Used:-
 -Reactstrap for mobile responsive design.
 -Firebase for deployment
 
+App Link - https://spotify-clone-faacb.web.app/#/home
